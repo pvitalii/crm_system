@@ -43,9 +43,9 @@ export const useDeleteProject = () => {
 
   return useMutation({
     mutationFn: deleteProject,
-    onSuccess: (_, deletedId) => {
+    onMutate: (id) => {
       queryClient.setQueryData<Project[]>([projectsQueryKey], (oldProjects = []) => {
-        return oldProjects.filter(project => project.id !== deletedId);
+        return oldProjects.filter(project => project.id !== id);
       });
     },
   });
