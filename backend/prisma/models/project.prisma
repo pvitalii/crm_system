@@ -1,0 +1,13 @@
+model Project {
+  id           Int        @id @default(autoincrement())
+  owner        String     @default("")
+  name         String     @default("")
+  url          String     @default("")
+  starsCount   Int        @default(0) @map("stars_count")
+  forksCount   Int        @default(0) @map("forks_count")
+  issuesCount  Int        @default(0) @map("issues_count")
+  createdAt    DateTime?  @map("created_at")
+  user         User       @relation(fields: [userId], references: [id])
+  userId       Int        @map("user_id")
+  status       String
+}
