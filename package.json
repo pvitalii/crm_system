@@ -11,7 +11,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
     "start:backend": "cd backend && npx prisma migrate dev --name init && npm run start",
     "start:frontend": "cd frontend && npm run start",
-    "start": "npm install && concurrently \"npm run start:backend\" \"npm run start:frontend\""
+    "start": "docker compose up --build"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.0.0",

@@ -60,7 +60,6 @@ export class ProjectsService {
   }
 
   async update(id: number, payload: Prisma.ProjectUpdateInput) {
-    console.log(payload);
     return this.prisma.project.update({
       where: { id },
       data: payload,
